@@ -1,3 +1,5 @@
+# Aequitas - Eine Social Media Plattform für Eltern von behinderten Kundern.
+
 Eltern von behinderten Kindern sollten möglichst viel Zeit für ihre Kinder haben. Stattdessen beschäftigen sie sich sehr viel mit zeitaufwändigen, administrative Prozesse. In die Betreuung und Entwicklung eines behinderten Kindes sind bis zu 20 Stellen involviert. Jede Stelle arbeitet anders und folgt anderen Prozessen und Verfahren, welche in der Regeln nicht gut dokumentiert sind. Zudem ist oft nicht bekannt, welchen Anspruch ähnliche Fälle gelten machen können. Verbände, Vereine oder Anwälte helfen dabei punktuell, aber oft nicht ganzheitlich.
 
 Anträge und Rechnungsstellung für die Sozialversicherungen sind oft mühsame Dokumente, welche noch aus der analogen Zeit stammen. Oft müssen diese noch von Hand ausgefüllt und unterschrieben werden. Es gibt zwar schon einige Online Portale von IV Stellen oder anderen Institutionen, diese helfen aber den betroffenen Eltern nur gerade, die Kommunikation mit einer Stelle zu vereinfachen. Meist geschieht dies aber noch per Brief, womit sich die Ordner mit Briefen stapeln und die Informationen nicht systematisch verwendet werden können.
