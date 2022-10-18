@@ -4,7 +4,7 @@ Anträge und Rechnungsstellung für die Sozialversicherungen sind oft mühsame D
 
 Auch wenn es seitens Vereine und Verbände Hilfe gibt, sind die Eltern von behinderten Kindern mit den administrativen Hürden oft alleine und brauchen dafür sehr viel Zeit. Meist sind auch die Fristen sehr kurz.
 
-Die mögliche Lösung:
+##Die mögliche Lösung:
 
 Unter dem Projektname «Aequitas» soll ein digitales, soziales Netzwerk entstehen, welches Personen mit Behinderungen und deren administrativen Vertretern hilft, die Bürokratie so weit wie möglich zu reduzieren.
 
