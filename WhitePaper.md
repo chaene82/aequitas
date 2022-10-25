@@ -1,4 +1,4 @@
-# Aequitas - Ein Sociales Netzwerk für Eltern von behinderten Kundern.
+# Aequitas - Ein Sociales Netzwerk für Eltern von behinderten Kindern.
 
 Eltern von behinderten Kindern sollten möglichst viel Zeit für ihre Kinder haben. Stattdessen beschäftigen sie sich sehr viel mit zeitaufwändigen, administrative Prozesse. In die Betreuung und Entwicklung eines behinderten Kindes sind oft 20 oder mehr Stellen involviert. Jede Stelle arbeitet anders und folgt anderen Prozessen und Verfahren, welche in der Regeln nicht gut dokumentiert sind. Zudem ist oft nicht bekannt, welchen Anspruch ähnliche Fälle gelten machen können. Verbände, Vereine oder Anwälte helfen dabei punktuell, aber meist nicht ganzheitlich.
 
@@ -17,6 +17,16 @@ Die Plattform hat den Anspruch, das zentrale System für die Behinderten und ihr
 Ein weiterer, grosser Mehrwert der Plattform stellt die Dokumentation vieler Fälle dar, welche es Plattformnutzern erlaubt, von anderen Fällen zu lernen. Dadurch können Behördenentscheide (z. B. IV oder Volksschule) mit anderen Fällen verglichen werden. Dies hilft zur Beurteilung eines Entscheides und gibt zusätzliche Argumente für Beschwerden, Wiedererwägen oder Rekurse.
 
 Dies geschieht durch Analysen von Berichten und Dokumentationen der Fälle, wobei jeweils ähnliche Fälle gefunden und zusammengeführt werden können. So können gezielt Vorschläge gemacht werden, welche Ansprüche noch bestehen. Duch ein internes Nachrichtensystem ist es zum auch möglich, anonym mit anderen Plattformteilnehmern in Kontakt zu treten um aktuelle oder künftige Themen zu besprechen. Durch den Privacy as Desgin Ansatz bleibt dabei der Datenschutz immer gewährleistet.  
+
+## Administrative Prozesse 
+
+### Hilfslosenentschädigung und Transportabrechnungen
+
+### Assistenzbeiträge
+
+### Beschwerden, Wiedererwägen und Rekurse
+
+## 
 
 ## Rechtsform und Finanzierung
 
