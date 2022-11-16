@@ -2,7 +2,7 @@
 
 Eltern von behinderten Kindern sollten möglichst viel Zeit für ihre Kinder haben. Stattdessen beschäftigen sie sich sehr viel mit zeitaufwändigen, administrative Prozesse. In die Betreuung und Entwicklung eines behinderten Kindes sind oft 20 oder mehr Stellen involviert. Jede Stelle arbeitet anders und folgt anderen Prozessen und Verfahren, welche in der Regeln nicht gut dokumentiert sind. Zudem ist oft nicht bekannt, welchen Anspruch ähnliche Fälle gelten machen können. Verbände, Vereine oder Anwälte helfen dabei punktuell, aber meist nicht ganzheitlich.
 
-Anträge und Rechnungsstellung für die Sozialversicherungen sind mühsame Formulare, welche noch aus der analogen Zeit stammen. Meist müssen diese noch von Hand ausgefüllt und unterschrieben werden. Es gibt zwar schon einige Online Portale von IV Stellen oder anderen Institutionen, diese helfen aber den betroffenen Eltern nur, die Kommunikation mit einer Stelle zu vereinfachen. Die meiste Kommunkation erfolgt auf in Papierform, womit sich die Ordner mit Briefen stapeln und die Informationen nicht systematisch verwendet werden können.
+Anträge und Rechnungsstellung für die Sozialversicherungen und andere Stellen sind mühsame Formulare, welche noch aus der analogen Zeit stammen. Meist müssen diese noch von Hand ausgefüllt und unterschrieben werden. Es gibt zwar schon einige Online-Portale von IV Stellen oder anderen Institutionen, diese helfen aber den betroffenen Eltern nur, die Kommunikation mit einer Stelle zu vereinfachen. Die meiste Kommunkation erfolgt auf in Papierform, womit sich die Ordner mit Briefen stapeln und die Informationen nicht systematisch verwendet werden können.
 
 Auch wenn es seitens Vereine und Verbände Hilfe gibt, sind die Eltern von behinderten Kindern mit den administrativen Hürden oft alleine und brauchen dafür sehr viel Zeit. Wenn Eltern anderer Kinder sich abends gemütlich hinsetzten und sich entspannen, schreiben die Eltern von behinderten Kindern Berichte, füllen Antragsformulare aus oder stellen Rekurse.
 
@@ -26,7 +26,9 @@ Dies geschieht durch Analysen von Berichten und Dokumentationen der Fälle, wobe
 
 ### Beschwerden, Wiedererwägen und Rekurse
 
-## 
+## Empfehlungssystem für zusätzliche Leistungen
+
+In der Schweiz gibt es sehr viele Leistungen von vielen unterschiedlichen Insitutionen, welche
 
 ## Rechtsform und Finanzierung
 
