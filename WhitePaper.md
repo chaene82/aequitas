@@ -22,13 +22,20 @@ Dies geschieht durch Analysen von Berichten und Dokumentationen der Fälle, wobe
 
 ### Hilfslosenentschädigung und Transportabrechnungen
 
+
+
 ### Assistenzbeiträge
+
+Die IV gewährt Assistenzbeiträge, um betroffenen Personen zur Selbständigkeit zu verhelfen. Diese Beiträge sind aber daran gekuppelt, dass die betroffenen Personen eine Assistenz nach dem Arbeitsrecht korrekt anstellen. Dazu gibt es zwar in der Schwweiz ein vereinfachtes Verfahren, allerdings ist es nach wie vor nicht ganz einfach, dies korrekt zu machen. 
+
+Das Modul Assistenz soll dabei helfen, die entsprechenden Mitarbeiter  anzustellen, Arbeitsverträge zu verwalten und die Lohnabrechung korrekt auszuführen. Hier soll auf bestehendes zurückgegriffen werden können.
 
 ### Beschwerden, Wiedererwägen und Rekurse
 
 ## Empfehlungssystem für zusätzliche Leistungen
 
-In der Schweiz gibt es sehr viele Leistungen von vielen unterschiedlichen Insitutionen, welche
+In der Schweiz gibt es sehr viele Leistungen von vielen unterschiedlichen Insitutionen. Das macht es den betroffenen nicht immer leicht, die entsprechenden Leistungen zu finden, welche ihnen zustehen. 
+Durch die Analyse von ähnlich gelagerten Fällen und deren Leistungen können Empfehlungen angesprochen werden, welche Leistungen noch wo bezogen werden können. Daruch kann sie die Siutation verbessern. Die dafür verwendetet Methode ist ein Recommender System, welches zum Beispiel auch bei Amazon zum Einsatz kommt. 
 
 ## Rechtsform und Finanzierung
 
