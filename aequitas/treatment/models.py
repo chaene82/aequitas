@@ -3,15 +3,20 @@ from django.db import models
 
 # Create your models here.
 
+# class Institute(models.Model):
+#     title = models.CharField(max_length=250)
+#     address = models.CharField(max_length=250)
+#     def __str__(self):
+#         return self.title
+
+
 class Institute(models.Model):
     title = models.CharField(max_length=250)
     address = models.CharField(max_length=250)
     def __str__(self):
         return self.title
 
-class Patient(models.Model):
-    first_name = models.CharField
-    last_name = models.CharField
+
     
 
 
