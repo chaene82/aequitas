@@ -17,6 +17,7 @@ class Institute(models.Model):
         return self.title
 
 
+
     
 
 

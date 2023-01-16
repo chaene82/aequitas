@@ -8,8 +8,6 @@ class TestTreatment(TestCase):
     This are general test cases for the Aequtias model Treatments.
     """
 
-
-
     def test_setup(self):
 
         self.assertEqual(1, 1)
