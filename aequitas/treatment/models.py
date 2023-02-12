@@ -18,7 +18,5 @@ class Institute(models.Model):
 
 
 
-    
-
 
 
