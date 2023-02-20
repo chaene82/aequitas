@@ -1,3 +1,7 @@
 django
 django-storages[azure]
 django-scheduler
+djangorestframework
+djangorestframework-jsonapi
+markdown       
+django-filter
