@@ -31,12 +31,25 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 # Routers provide an easy way of automatically determining the URL conf.
-router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'patient', views.PatientViewSet)
+settlement_router = routers.DefaultRouter()
+settlement_router.register(r'users', UserViewSet)
+settlement_router.register(r'patient', views.PatientViewSet)
+settlement_router.register(r'cost_approval', views.CostApprovalViewSet)
+settlement_router.register(r'address', views.AddressViewSet)
+settlement_router.register(r'legal_gardiant', views.LegalGuardiantViewSet)
+settlement_router.register(r'insurance', views.InsuranceViewSet)
+settlement_router.register(r'payment_methode', views.PaymentMethodeViewSet)
+settlement_router.register(r'cost_approval_tpye', views.CostApprovalTypeViewSet)
+settlement_router.register(r'settlement', views.SettelmentViewSet)
+
+
+
+
+
+
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('api/settlement/', include(settlement_router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
 

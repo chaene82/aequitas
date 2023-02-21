@@ -1,13 +1,23 @@
 from django.db import models
 
 # Create your models here.
+class Address(models.Model):
+    address = models.CharField(max_length=100, null=True)
+    zip_code = models.CharField(max_length=100, null=True)
+    city = models.CharField(max_length=100, null=True)   
+    
+    def __str__(self):
+        return self.address + ',' + self.zip_code + ' ' + self.city   
+
+
 class LegalGuardiant(models.Model):
     first_name = models.CharField(max_length=250, null=True)
     last_name = models.CharField(max_length=250, null=True)
     display_name = models.CharField(max_length=100)
-    address = models.CharField(max_length=100, null=True)
-    zip_code = models.CharField(max_length=100, null=True)
-    city = models.CharField(max_length=100, null=True)   
+    address = models.ForeignKey(Address,
+                     on_delete=models.CASCADE,
+                     related_name='LegalGuardiant_Address',
+                     null=True)
     create = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)   
 
@@ -18,9 +28,10 @@ class Patient(models.Model):
     first_name = models.CharField(max_length=250, null=True)
     last_name = models.CharField(max_length=250, null=True)
     display_name = models.CharField(max_length=100)
-    address = models.CharField(max_length=100, null=True)
-    zip_code = models.CharField(max_length=100, null=True)
-    city = models.CharField(max_length=100, null=True)   
+    address = models.ForeignKey(Address,
+                     on_delete=models.CASCADE,
+                     related_name='Patient_Address',
+                     null=True) 
     legalGuardiant = models.ForeignKey(LegalGuardiant,
                      on_delete=models.CASCADE,
                      related_name='Patient_LegalGuardiant',
@@ -33,7 +44,7 @@ class Patient(models.Model):
 
 class PaymentMethode(models.Model):
     name = models.CharField(max_length=250)
-    type = models.CharField(max_length=250)
+    pm_type = models.CharField(max_length=250)
     bank = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     IBAN = models.CharField(max_length=100)
@@ -47,13 +58,21 @@ class PaymentMethode(models.Model):
 
 class Insurance(models.Model):
     name = models.CharField(max_length=250)
-    type = models.CharField(max_length=250)
-    address = models.CharField(max_length=100)
-    zip_code = models.CharField(max_length=100)
-    city = models.CharField(max_length=100)
+    insurance_type = models.CharField(max_length=250)
+    address = models.ForeignKey(Address,
+                     on_delete=models.CASCADE,
+                     related_name='Insurance_Address',
+                     null=True)
     create = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.name
+
+class CostApprovalType(models.Model):
+    name = models.CharField(max_length=250)
+    templateForm = models.CharField(max_length=100)
+    
     def __str__(self):
         return self.name
 
@@ -68,9 +87,10 @@ class CostApproval(models.Model):
     paymentMethode = models.ForeignKey(PaymentMethode,
                     on_delete=models.CASCADE,
                     related_name='CostApproval_paymentMethode', null=True)                 
-    type = models.CharField(max_length=100)
     refCode = models.CharField(max_length=100)
-    templateForm = models.CharField(max_length=100)
+    ca_type = models.ForeignKey(CostApprovalType,
+                    on_delete=models.CASCADE,
+                    related_name='CostApproval_CostApprovalType', null=True)  
     startDate = models.DateField(null=True)
     EndDate = models.DateField(null=True)
     create = models.DateTimeField(auto_now_add=True)
@@ -79,7 +99,7 @@ class CostApproval(models.Model):
     def __str__(self):
          return self.name 
         
-class Settelment(models.Model):
+class Settlement(models.Model):
     name = models.CharField(max_length=250)
     costApproval = models.ForeignKey(CostApproval,
                     on_delete=models.CASCADE,
