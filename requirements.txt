@@ -5,3 +5,4 @@ djangorestframework
 djangorestframework-jsonapi
 markdown       
 django-filter
+fillpdf
