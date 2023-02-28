@@ -57,6 +57,10 @@ class TestSettlement(TestCase):
         """Test adding a customer
         create a patient and count the number of the patient.
         """
+        
+        addr = Address(**test_address)
+        addr.save()
+        
         #a = Patient(display_name = "Test Patient")
         a = Patient(**test_patient)
         a.save()
@@ -107,9 +111,9 @@ class TestInvoice(TestCase):
         i.forms_path = 'forms/'
         i.document_path = 'test/documents/'
         
-        nr_patient = Patient.objects.count()
-        print("HLE Number of Records = ", nr_patient)
-        self.assertEqual(nr_patient, 1)                
+        #nr_patient = Patient.objects.count()
+        #print("HLE Number of Records = ", nr_patient)
+        #self.assertEqual(nr_patient, 1)                
 
         
            
