@@ -68,11 +68,21 @@ class TestSettlement(TestCase):
         nr_patient = Patient.objects.count()
         print("Number of Records = ", nr_patient)
         self.assertEqual(nr_patient, 1)
-    
+
+class TestPatient(TestCase):
+    ### add a patation to Django, change address, remove the patient
+    ###
+    def test_patient_add(self):
+        addr = Address(**test_address)
+        addr.save()
+
+        a = Patient(**test_patient)
+        a.save()
+        
+
+
     
 class TestInvoice(TestCase):     
-
-
 
     def test_create_invoice(self):
         dt_now = datetime.datetime.now()
@@ -113,7 +123,9 @@ class TestInvoice(TestCase):
         
         #nr_patient = Patient.objects.count()
         #print("HLE Number of Records = ", nr_patient)
-        #self.assertEqual(nr_patient, 1)                
+        #self.assertEqual(nr_patient, 1)            
+        # 
+    
 
         
            
