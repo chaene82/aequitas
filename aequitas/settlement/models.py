@@ -28,7 +28,7 @@ class Patient(models.Model):
     first_name = models.CharField(max_length=250, null=True)
     last_name = models.CharField(max_length=250, null=True)
     display_name = models.CharField(max_length=100)
-    social_insurance_number = models.CharField(max_length=20) 
+    social_insurance_number = models.CharField(max_length=20, null=True) 
     address = models.ForeignKey(Address,
                      on_delete=models.CASCADE,
                      related_name='Patient_Address',
