@@ -6,4 +6,3 @@ djangorestframework-jsonapi
 markdown       
 django-filter
 fillpdf
-env
