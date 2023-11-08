@@ -29,11 +29,5 @@ jobs:
           push: true
           tags: chrhae82/aequitas:latest
 
-  deploy_to_test:
-    runs-on: ubuntu-latest
-      steps:
-        - name: Deploy to the Test Server
-          uses: garygrossgarten/github-action-ssh@release
-          with:
-            
+
 
