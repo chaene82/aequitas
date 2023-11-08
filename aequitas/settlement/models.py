@@ -93,7 +93,8 @@ class CostApproval(models.Model):
                     on_delete=models.CASCADE,
                     related_name='CostApproval_CostApprovalType', null=True)  
     startDate = models.DateField(null=True)
-    EndDate = models.DateField(null=True)
+    endDate = models.DateField(null=True)
+    amount = models.FloatField(null=True)
     create = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -107,7 +108,9 @@ class Settlement(models.Model):
                     related_name='Settlement_costApproval')             
     status = models.CharField(max_length=100)
     startDate = models.DateField(null=True, blank=True)
-    EndDate = models.DateField(null=True, blank=True)
+    endDate = models.DateField(null=True, blank=True)
+    requestetAmount = models.FloatField(null=True)
+    receivedAmount = models.FloatField(null=True)
     invoiceDate = models.DateTimeField(null=True, blank=True)
     paymentDate = models.DateTimeField(null=True, blank=True)
     documentPath = models.CharField(max_length=500)
