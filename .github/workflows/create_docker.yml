@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: chrhae82/aequitas:20231116, chrhae82/aequitas:latest
+          tags: chrhae82/aequitas:202311161, chrhae82/aequitas:latest
