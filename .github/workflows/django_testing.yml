@@ -26,7 +26,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run Tests
-      working-directory: aequitas
+      working-directory: 
       run: |
-        ls -l
-        python ../manage.py test
+        python manage.py test
