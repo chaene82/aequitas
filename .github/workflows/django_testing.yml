@@ -28,4 +28,5 @@ jobs:
     - name: Run Tests
       working-directory: aequitas
       run: |
-        python manage.py test
+        ls -l
+        python ../manage.py test
