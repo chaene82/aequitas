@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ "main", "docker" ]
 
+env:
+  ENVIRONMENT: TEST
+  SECRET_KEY: 123456789
+
 jobs:
   build:
 
