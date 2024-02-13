@@ -165,5 +165,5 @@ REST_FRAMEWORK = {
     'TEST_REQUEST_DEFAULT_FORMAT': 'vnd.api+json'
 }
 
-if os.environ.get('ENVIRONMENT', 'TEST'):
+if os.environ.get('ENVIRONMENT') == 'TEST':
     from .settings_test import *
