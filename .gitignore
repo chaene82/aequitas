@@ -1,6 +1,6 @@
 # Custom
 aequitas/test/*
-#staticfiles
+staticfiles
 /test/*
 
 
