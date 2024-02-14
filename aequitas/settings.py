@@ -167,3 +167,4 @@ REST_FRAMEWORK = {
 
 if os.environ.get('ENVIRONMENT') == 'TEST':
     from settings_test import *
+
