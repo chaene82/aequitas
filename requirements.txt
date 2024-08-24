@@ -1,8 +1,3 @@
-django
-django-storages[azure]
-django-scheduler
-djangorestframework
-djangorestframework-jsonapi
-markdown       
-django-filter
-fillpdf
+Django>=3.2.3,<3.3
+psycopg2>=2.8.6,<2.9
+uWSGI>=2.0.19.1,<2.1
