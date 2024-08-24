@@ -1,3 +1,6 @@
 Django
 psycopg2
 uWSGI
+djangorestframework
+djangorestframework-jsonapi
+fillpdf
