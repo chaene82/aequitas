@@ -148,7 +148,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('ENGINE', 'django.db.backends.sqlite3'),
+        'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.sqlite3'),
         'NAME':  os.environ.get('DB_NAME',   BASE_DIR / 'db.sqlite3'),
         'HOST': os.environ.get('DB_HOST'),
         'USER': os.environ.get('DB_USER'),
