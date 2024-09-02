@@ -1,8 +1,6 @@
-django
-django-storages[azure]
-django-scheduler
+Django
+psycopg2
+uWSGI
 djangorestframework
 djangorestframework-jsonapi
-markdown       
-django-filter
 fillpdf

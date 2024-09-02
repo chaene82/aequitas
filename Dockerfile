@@ -1,19 +1,31 @@
-# Dockerfile
+FROM python
+LABEL maintainer="londonappdeveloper.com"
 
-# The first instruction is what image we want to base our container on
-# We Use an official Python runtime as a parent image
-FROM python:3.8
+ENV PYTHONUNBUFFERED 1
 
-# Allows docker to cache installed dependencies between builds
-COPY requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./requirements.txt /requirements.txt
+COPY ./app /app
+COPY ./scripts /scripts
 
-# Mounts the application code to the image
-COPY . code
-WORKDIR /code/aequitas
-
+WORKDIR /app
 EXPOSE 8000
 
-# runs the production server
-ENTRYPOINT ["python", "manage.py"]
-CMD ["runserver"]
+RUN python -m venv /py && \
+    /py/bin/pip install --upgrade pip && \
+#    apk add --update --no-cache postgresql-client && \
+#    apk add --update --no-cache --virtual .tmp-deps \
+#        build-base postgresql-dev musl-dev linux-headers && \
+    /py/bin/pip install -r /requirements.txt && \
+#    apk del .tmp-deps && \
+    adduser --disabled-password --no-create-home app && \
+    mkdir -p /vol/web/static && \
+    mkdir -p /vol/web/media && \
+    chown -R app:app /vol && \
+    chmod -R 755 /vol && \
+    chmod -R +x /scripts
+
+ENV PATH="/scripts:/py/bin:$PATH"
+
+USER app
+
+CMD ["run.sh"]
