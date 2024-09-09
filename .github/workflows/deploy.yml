@@ -1,5 +1,7 @@
 name: Deploy to Test Server
 on:
+  push:
+    branches: [ "test" ]
   pull_request:
     branches: [ "test" ]
 
