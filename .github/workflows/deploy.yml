@@ -1,7 +1,7 @@
 name: Deploy to Test Server
 on:
   pull_request:
-    # Deploy to test only whoami
+    # Deploy to test only whoami new key
     branches:
       - 'test'
 
