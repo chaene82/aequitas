@@ -3,7 +3,7 @@ on:
   pull_request:
     # Deploy to test
     branches:
-      - test
+      - 'test'
 
 jobs:
   deploy:
