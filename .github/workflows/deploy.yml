@@ -1,0 +1,21 @@
+name: Deploy to Test Server and execute tests
+on:
+  pull_request:
+    # Deploy to test only whoami new key
+    branches:
+      - 'test'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: test
+    steps:
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: cd test/aequitas && bash rebuild.sh
+          
