@@ -1,0 +1,21 @@
+name: Deploy to Integration Server and execute integration test
+on:
+  pull_request:
+    # Deploy to test only whoami new key
+    branches:
+      - 'int'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: int
+    steps:
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: cd test/aequitas && bash rebuild_int.sh
+          
