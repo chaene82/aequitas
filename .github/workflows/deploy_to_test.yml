@@ -1,4 +1,4 @@
-name: Deploy to Test Server
+name: Deploy to Test Server and execute tests
 on:
   pull_request:
     # Deploy to test only whoami new key
@@ -17,4 +17,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script: cd test/aequitas && bash rebuild.sh
+          
