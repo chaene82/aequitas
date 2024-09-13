@@ -17,5 +17,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: cd test/aequitas && bash rebuild_int.sh
+          script: cd int/aequitas && bash rebuild_int.sh
           
