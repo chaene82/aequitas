@@ -20,6 +20,7 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from rest_framework import routers, serializers, viewsets
 from settlement.views import PatientListView
+from settlement import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
