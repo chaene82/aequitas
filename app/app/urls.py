@@ -19,10 +19,11 @@ from django.conf.urls.static import static
 from django.contrib.auth.models import User
 from django.conf import settings
 from rest_framework import routers, serializers, viewsets
-from settlement import views
+from settlement.views import PatientListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('stettlement/patient', PatientListView, name='settlement'),
 ]
 
 if settings.DEBUG:

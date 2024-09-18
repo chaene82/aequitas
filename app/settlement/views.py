@@ -5,8 +5,17 @@ from .serializers import PatientSerializer, CostApprovalSerializer, AddressSeria
     LegalGuardiantSerializer, InsuranceSerializer, PaymentMethodeSerializer, CostApprovalTypeSerializer, \
         SettlementSerializer
 from rest_framework import viewsets
+from django.views.generic import ListView
 
 from fillpdf import fillpdfs
+
+
+class PatientListView(ListView):
+    model = Patient
+    template_name = 'settlement/patient.html'
+
+
+
 
 
 #fileds = fillpdfs.get_form_fields("../forms/Rechnung+HE+318.632.2_D+2023_r.pdf")
