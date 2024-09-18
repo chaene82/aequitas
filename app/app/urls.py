@@ -24,7 +24,7 @@ from settlement import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('stettlement/patient', PatientListView, name='settlement'),
+    path('stettlement/patient', PatientListView.as_view(), name='settlement'),
 ]
 
 if settings.DEBUG:
