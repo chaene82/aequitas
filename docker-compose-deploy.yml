@@ -40,3 +40,9 @@ services:
 volumes:
   postgres-data:
   static-data:
+
+
+networks:
+  default:
+    # Use a custom driver
+    driver: aequitas
