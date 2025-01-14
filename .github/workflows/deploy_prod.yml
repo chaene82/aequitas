@@ -6,7 +6,7 @@ on:
 jobs:
   deploy_prod:
     runs-on: ubuntu-latest
-    environment: test
+    environment: prod
     steps:
       - name: executing remote ssh commands using ssh key (git pull)
         uses: appleboy/ssh-action@v1.0.3
