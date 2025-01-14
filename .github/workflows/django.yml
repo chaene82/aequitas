@@ -29,3 +29,4 @@ jobs:
       working-directory: ./app
       run:
         python manage.py test
+
