@@ -23,6 +23,7 @@ jobs:
   deploy_int:
     runs-on: ubuntu-latest
     environment: int
+    needs: deploy_test
     steps:
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@v1.0.3
