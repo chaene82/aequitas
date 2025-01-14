@@ -96,3 +96,4 @@ jobs:
           port: ${{ secrets.PORT }}        
           script: cd int/aequitas && docker compose -p aequitas-int -f docker-compose-deploy.yml up -d
           
+          
