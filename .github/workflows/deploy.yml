@@ -68,12 +68,31 @@ jobs:
     environment: int
     needs: deploy_test
     steps:
-      - name: executing remote ssh commands using ssh key
+      - name: executing remote ssh commands using ssh key (git pull)
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: cd int/aequitas && bash rebuild_int.sh
+          script: cd int/aequitas && git pull 
+
+      - name: executing remote ssh commands using ssh key (build docker)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}        
+          script: cd int/aequitas && docker compose -p aequitas-int -f docker-compose-deploy.yml build
+
+          
+      - name: executing remote ssh commands using ssh key (deploy docker)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}        
+          script: cd int/aequitas && docker compose -p aequitas-int -f docker-compose-deploy.yml up -d
           
