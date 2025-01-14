@@ -1,9 +1,9 @@
-name: Deploy to Test Server and execute tests
+name: Deploy to Test and Int
 on:
-  pull_request: 
-    # Deploy to test only whoami new key
-    branches:
-      - 'main'
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   deploy_test:
