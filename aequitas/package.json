@@ -1,0 +1,14 @@
+{
+  "name": "aequitas",
+  "version": "1.0.0",
+  "description": "Socical Media for Parents with disabled children",
+  "main": "cypress.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
