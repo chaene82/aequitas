@@ -1,4 +1,4 @@
-name: Deploy to Test and Int
+name: Deploy to Prod
 on:
   pull_request:
     branches: [ "prod" ]
