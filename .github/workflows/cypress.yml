@@ -17,10 +17,9 @@ jobs:
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
         with:
-          working-directory: client
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
-          start: npm start
+          start: npx cypress run --record --key e8992b45-019d-48b0-a4f6-8779a50b0c86
           wait-on: 'http://test.aquitas.dynv6.net:28080/admin' # Waits for above
           # Records to Cypress Cloud
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
