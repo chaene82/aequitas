@@ -2,6 +2,7 @@
 aequitas/test/*
 staticfiles
 /test/*
+/node_modules/*
 
 
 
