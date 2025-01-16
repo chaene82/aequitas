@@ -30,7 +30,7 @@ describe('Admin Login', () => {
     cy.get('form').submit();
 
     // Assert that an error message is displayed
-    cy.get('.login-error').should('contain', 'Please enter the correct username and password.');
+    cy.get('.errornote').should('contain', 'Please enter the correct username and password');
     cy.url().should('include', '/admin/login/'); // URL should remain on the login page
   });
 });
