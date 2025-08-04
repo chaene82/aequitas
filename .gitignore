@@ -3,6 +3,15 @@ aequitas/test/*
 staticfiles
 /test/*
 /node_modules/*
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+
+# Docker
+docker-compose.override.yml
+.dockerignore
 
 
 
