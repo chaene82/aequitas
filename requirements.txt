@@ -1,6 +1,9 @@
 Django
-psycopg2
+psycopg2-binary
 uWSGI
+gunicorn
+whitenoise
+python-dotenv
 djangorestframework
 djangorestframework-jsonapi
 fillpdf
