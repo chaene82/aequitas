@@ -151,7 +151,18 @@ resource "google_sql_database_instance" "aequitas_db" {
       name  = "log_connections"
       value = "on"
     }
-
+    database_flags {
+      name  = "log_disconnections"
+      value = "on"
+    }
+    database_flags {
+      name  = "log_checkpoints"
+      value = "on"
+    }
+    database_flags {
+      name  = "log_lock_waits"
+      value = "on"
+    }
     ip_configuration {
       ipv4_enabled = false
       private_network = google_compute_network.aequitas_network.id
