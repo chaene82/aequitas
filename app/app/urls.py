@@ -19,11 +19,12 @@ from django.conf.urls.static import static
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
 from rest_framework import routers, serializers, viewsets
 from settlement import views
 
 
-@require_http_methods(["GET", "POST"])  # Sensitive
+@require_http_methods(["GET"])
 def health_check(request):
     """Health check endpoint for Cloud Run"""
     return JsonResponse({'status': 'healthy', 'service': 'aequitas'})
