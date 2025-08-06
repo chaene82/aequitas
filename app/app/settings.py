@@ -147,17 +147,6 @@ DATABASES = {
     }
 }
 
-# Cloud SQL specific configurations
-if os.environ.get('DB_HOST') and '/cloudsql/' in os.environ.get('DB_HOST'):
-    # Running on Cloud Run with Cloud SQL
-    DATABASES['default'].update({
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
-        'CONN_MAX_AGE': 600,
-        'CONN_HEALTH_CHECKS': True,
-    })
-
 # WhiteNoise configuration for efficient static file serving
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
