@@ -147,6 +147,11 @@ resource "google_sql_database_instance" "aequitas_db" {
       value = "on"
     }
 
+    database_flags {
+      name  = "log_connections"
+      value = "on"
+    }
+
     ip_configuration {
       ipv4_enabled = false
       private_network = google_compute_network.aequitas_network.id
@@ -193,6 +198,12 @@ resource "google_compute_subnetwork" "aequitas_subnet" {
   region        = var.region
   network       = google_compute_network.aequitas_network.id
   ip_cidr_range = "10.1.0.0/16"
+
+  log_config {
+    aggregation_interval = "INTERVAL_10_MIN"
+    flow_sampling        = 0.5
+    metadata             = "INCLUDE_ALL_METADATA"
+  }
 }
 
 # Reserve IP range for private services
