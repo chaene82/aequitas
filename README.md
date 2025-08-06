@@ -4,7 +4,9 @@ Social Media for Parents with disabled children
 ## Table of Contents
 - [Overview](#overview)
 - [Local Development](#local-development)
-- [Cloud Deployment on DigitalOcean](#cloud-deployment-on-digitalocean)
+- [Cloud Deployment](#cloud-deployment)
+  - [Google Cloud Platform](#google-cloud-platform)
+  - [DigitalOcean](#digitalocean)
 - [Environment Configuration](#environment-configuration)
 - [Docker Usage](#docker-usage)
 
@@ -55,11 +57,55 @@ cp .env.development.sample .env
 docker-compose up --build
 ```
 
-## Cloud Deployment on DigitalOcean
+## Cloud Deployment
+
+Aequitas supports deployment on multiple cloud platforms with different levels of complexity and features.
+
+### Google Cloud Platform
+
+For a fully managed, scalable deployment with Cloud SQL PostgreSQL database, use Google Cloud Platform.
+
+#### Quick Google Cloud Deployment
+
+```bash
+# Clone the repository
+git clone https://github.com/chaene82/aequitas.git
+cd aequitas
+
+# Run the automated deployment script
+./deploy-gcloud.sh YOUR_GCP_PROJECT_ID us-central1
+```
+
+#### Manual Google Cloud Deployment
+
+1. **Set up infrastructure with Terraform**:
+```bash
+cd terraform
+terraform init
+cp terraform.tfvars.example terraform.tfvars
+# Edit terraform.tfvars with your project details
+terraform apply
+```
+
+2. **Build and deploy application**:
+```bash
+gcloud builds submit --config cloudbuild.yaml
+```
+
+For detailed instructions, see [Google Cloud Deployment Guide](docs/gcloud-deployment.md).
+
+#### Google Cloud Features
+- **Cloud Run**: Serverless container hosting with automatic scaling
+- **Cloud SQL**: Managed PostgreSQL database with backups
+- **Secret Manager**: Secure configuration management
+- **Cloud Build**: Automated CI/CD pipeline
+- **Private networking**: VPC with private database access
+
+### DigitalOcean
 
 This application is optimized for cloud deployment on DigitalOcean using Docker, PostgreSQL, and efficient static file serving.
 
-### Option 1: DigitalOcean App Platform (Recommended)
+#### Option 1: DigitalOcean App Platform (Recommended)
 
 #### Prerequisites
 - DigitalOcean account
@@ -112,7 +158,7 @@ This application is optimized for cloud deployment on DigitalOcean using Docker,
    
    Click "Create Resources" to deploy your application.
 
-### Option 2: DigitalOcean Droplets with Docker
+#### Option 2: DigitalOcean Droplets with Docker
 
 #### Prerequisites
 - DigitalOcean Droplet (Ubuntu 22.04 recommended)
@@ -153,7 +199,7 @@ docker compose up -d --build
    
    Configure Nginx or use the included proxy service for SSL and domain management.
 
-### Option 3: Using Procfile (Heroku-compatible platforms)
+#### Option 3: Using Procfile (Heroku-compatible platforms)
 
 The application includes a `Procfile` for deployment on Heroku-compatible platforms:
 

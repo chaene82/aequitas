@@ -13,6 +13,17 @@ staticfiles
 docker-compose.override.yml
 .dockerignore
 
+# Google Cloud
+.gcloudignore
+terraform/*.tfstate*
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+cloud-run-service-deploy.yaml
+
+# Temporary files
+tmp/
+temp/
+
 
 
 # Byte-compiled / optimized / DLL files

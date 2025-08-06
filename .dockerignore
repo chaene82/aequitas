@@ -13,6 +13,37 @@ app/*/*/*/__pycache__/
 .env/
 .venv/
 venv/
+__pycache__/
 
 # Local PostgreSQL data
 data/
+
+# Development files
+.env*
+!.env.gcloud.sample
+node_modules/
+cypress/
+cypress.config.js
+package*.json
+
+# Documentation and scripts
+docs/
+terraform/
+.github/
+README.md
+*.md
+!requirements.txt
+
+# Test files
+app/test/
+app/test_db.sqlite3
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
