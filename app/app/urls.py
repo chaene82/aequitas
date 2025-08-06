@@ -23,6 +23,7 @@ from rest_framework import routers, serializers, viewsets
 from settlement import views
 
 
+@require_http_methods(["GET", "POST"])  # Sensitive
 def health_check(request):
     """Health check endpoint for Cloud Run"""
     return JsonResponse({'status': 'healthy', 'service': 'aequitas'})
