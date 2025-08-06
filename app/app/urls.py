@@ -26,7 +26,7 @@ from settlement import views
 
 @require_http_methods(["GET"])
 def health_check(request):
-    """Health check endpoint for Cloud Run"""
+    """Health check endpoint"""
     return JsonResponse({'status': 'healthy', 'service': 'aequitas'})
 
 urlpatterns = [
