@@ -14,16 +14,28 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.contrib.auth.models import User
+from django.contrib.auth import views as auth_views
 from django.conf import settings
 from rest_framework import routers, serializers, viewsets
 from settlement import views
+from frontend_views import home_view, login_view, create_legal_guardian_view, create_patient_view
+
+# Frontend URLs
+frontend_urlpatterns = [
+    path('', home_view, name='home'),
+    path('login/', login_view, name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
+    path('create-legal-guardian/', create_legal_guardian_view, name='create_legal_guardian'),
+    path('create-patient/', create_patient_view, name='create_patient'),
+    path('i18n/', include('django.conf.urls.i18n')),
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+] + frontend_urlpatterns
 
 if settings.DEBUG:
     urlpatterns += static(
