@@ -1,0 +1,65 @@
+# .gcloudignore file for Cloud Build
+# This file excludes files and folders from being uploaded to Cloud Build
+
+# Version control
+.git/
+.gitignore
+
+# Documentation
+docs/
+README.md
+*.md
+
+# Development environment files
+.env*
+!.env.gcloud.sample
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node.js
+node_modules/
+package*.json
+cypress/
+cypress.config.js
+
+# Development database
+app/db.sqlite3
+app/test_db.sqlite3
+
+# Test files
+app/test/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Terraform
+terraform/
+*.tfstate*
+.terraform/
+
+# Local development files
+docker-compose.yml
+docker-compose.override.yml
+rebuild*.sh
+
+# CI/CD (already in repo, no need to upload again)
+.github/
+
+# Temporary files
+tmp/
+temp/
+*.log

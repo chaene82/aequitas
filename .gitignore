@@ -14,7 +14,6 @@ docker-compose.override.yml
 .dockerignore
 
 # Google Cloud
-.gcloudignore
 terraform/*.tfstate*
 terraform/.terraform/
 terraform/.terraform.lock.hcl
