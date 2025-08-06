@@ -139,13 +139,24 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME':  os.environ.get('DB_NAME',   BASE_DIR / 'db.sqlite3'),
+        'NAME': os.environ.get('DB_NAME', BASE_DIR / 'db.sqlite3'),
         'HOST': os.environ.get('DB_HOST'),
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASS'),
         'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
+
+# Cloud SQL specific configurations
+if os.environ.get('DB_HOST') and '/cloudsql/' in os.environ.get('DB_HOST'):
+    # Running on Cloud Run with Cloud SQL
+    DATABASES['default'].update({
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
+        'CONN_MAX_AGE': 600,
+        'CONN_HEALTH_CHECKS': True,
+    })
 
 # WhiteNoise configuration for efficient static file serving
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

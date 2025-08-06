@@ -1,0 +1,61 @@
+# Multi-stage Dockerfile optimized for Google Cloud Run
+FROM python:3.12-alpine AS builder
+
+# Set environment variables for build
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Install build dependencies
+RUN apk add --update --no-cache \
+    build-base \
+    libffi-dev
+    linux-headers \
+    musl-dev \
+    postgresql-dev 
+
+
+# Create virtual environment and install dependencies
+COPY ./requirements.txt /requirements.txt
+RUN python -m venv /py && \
+    /py/bin/pip install --upgrade pip && \
+    /py/bin/pip install -r /requirements.txt
+
+# Production stage
+FROM python:3.12-alpine AS production
+
+LABEL maintainer="aequitas-dev"
+
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Install runtime dependencies only
+RUN apk add --update --no-cache postgresql-client
+
+# Copy virtual environment from builder
+COPY --from=builder /py /py
+
+# Copy application code
+COPY ./app /app
+COPY ./scripts /scripts
+
+WORKDIR /app
+
+# Create app user for security
+RUN adduser --disabled-password --no-create-home app && \
+    mkdir -p /vol/web/static && \
+    mkdir -p /vol/web/media && \
+    chown -R app:app /vol && \
+    chmod -R 755 /vol && \
+    chmod -R +x /scripts
+
+# Set PATH to include virtual environment and scripts
+ENV PATH="/scripts:/py/bin:$PATH"
+
+# Expose port (Cloud Run uses PORT environment variable)
+EXPOSE 8000
+
+# Switch to app user
+USER app
+
+# Use the run script as entrypoint
+CMD ["run.sh"]
