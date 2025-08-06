@@ -1,0 +1,167 @@
+# German translation for Aequitas
+# Copyright (C) 2024 Aequitas Project
+# This file is distributed under the same license as the Aequitas package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Aequitas 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-06 09:43+0000\n"
+"PO-Revision-Date: 2024-01-01 12:00+0000\n"
+"Last-Translator: Aequitas Team\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Zip Code"
+msgstr "Postleitzahl"
+
+msgid "City"
+msgstr "Stadt"
+
+msgid "Street address"
+msgstr "Straßenadresse"
+
+msgid "Zip code"
+msgstr "Postleitzahl"
+
+msgid "First Name"
+msgstr "Vorname"
+
+msgid "Last Name"
+msgstr "Nachname"
+
+msgid "Display Name"
+msgstr "Anzeigename"
+
+msgid "First name"
+msgstr "Vorname"
+
+msgid "Last name"
+msgstr "Nachname"
+
+msgid "Display name"
+msgstr "Anzeigename"
+
+msgid "Social Insurance Number"
+msgstr "Sozialversicherungsnummer"
+
+msgid "Legal Guardian"
+msgstr "Betreuer"
+
+msgid "Social insurance number"
+msgstr "Sozialversicherungsnummer"
+
+msgid "Select a legal guardian"
+msgstr "Betreuer auswählen"
+
+msgid "Welcome back, {}!"
+msgstr "Willkommen zurück, {}!"
+
+msgid "Invalid username or password."
+msgstr "Ungültiger Benutzername oder Passwort."
+
+msgid "Legal Guardian \"{}\" has been created successfully."
+msgstr "Betreuer \"{}\" wurde erfolgreich erstellt."
+
+msgid "An error occurred while saving the legal guardian."
+msgstr "Beim Speichern des Betreuers ist ein Fehler aufgetreten."
+
+msgid "Please correct the errors below."
+msgstr "Bitte korrigieren Sie die folgenden Fehler."
+
+msgid "Patient \"{}\" has been created successfully."
+msgstr "Patient \"{}\" wurde erfolgreich erstellt."
+
+msgid "An error occurred while saving the patient."
+msgstr "Beim Speichern des Patienten ist ein Fehler aufgetreten."
+
+msgid "Create Legal Guardian"
+msgstr "Betreuer erstellen"
+
+msgid "Create Patient"
+msgstr "Patient erstellen"
+
+msgid "Logout"
+msgstr "Abmelden"
+
+msgid "Login"
+msgstr "Anmelden"
+
+msgid "Healthcare Management System"
+msgstr "Gesundheitsmanagement-System"
+
+msgid "Home"
+msgstr "Startseite"
+
+msgid "Welcome to Aequitas"
+msgstr "Willkommen bei Aequitas"
+
+msgid "Healthcare Management System for Legal Guardians and Patients"
+msgstr "Gesundheitsmanagement-System für Betreuer und Patienten"
+
+msgid "Please log in to access the system."
+msgstr "Bitte melden Sie sich an, um auf das System zuzugreifen."
+
+msgid "Legal Guardians"
+msgstr "Betreuer"
+
+msgid "Create and manage legal guardians for patients."
+msgstr "Erstellen und verwalten Sie Betreuer für Patienten."
+
+msgid "Patients"
+msgstr "Patienten"
+
+msgid "Create and manage patient records with their information."
+msgstr "Erstellen und verwalten Sie Patientenakten mit deren Informationen."
+
+msgid "System Information"
+msgstr "System-Informationen"
+
+msgid "Current User"
+msgstr "Aktueller Benutzer"
+
+msgid "Language"
+msgstr "Sprache"
+
+msgid "Last Login"
+msgstr "Letzter Login"
+
+msgid "First time login"
+msgstr "Erstmaliger Login"
+
+msgid "Login to Aequitas"
+msgstr "Bei Aequitas anmelden"
+
+msgid "Please contact your administrator if you need account access."
+msgstr "Bitte wenden Sie sich an Ihren Administrator, wenn Sie Zugang benötigen."
+
+msgid "Personal Information"
+msgstr "Persönliche Informationen"
+
+msgid "Leave empty to auto-generate from first and last name"
+msgstr "Leer lassen, um automatisch aus Vor- und Nachnamen zu generieren"
+
+msgid "Address Information"
+msgstr "Adressinformationen"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Fields marked with * are required"
+msgstr "Mit * markierte Felder sind Pflichtfelder"
+
+msgid "Optional - Select a legal guardian if applicable"
+msgstr "Optional - Wählen Sie einen Betreuer aus, falls zutreffend"
+
+msgid "No legal guardians found. You may need to"
+msgstr "Keine Betreuer gefunden. Sie müssen möglicherweise"
+
+msgid "create a legal guardian first"
+msgstr "zuerst einen Betreuer erstellen"

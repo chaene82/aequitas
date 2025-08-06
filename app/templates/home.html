@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}Aequitas - {% trans "Home" %}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="jumbotron bg-light p-5 rounded">
+            <h1 class="display-4">
+                <i class="bi bi-shield-check text-primary"></i> 
+                {% trans "Welcome to Aequitas" %}
+            </h1>
+            <p class="lead">
+                {% trans "Healthcare Management System for Legal Guardians and Patients" %}
+            </p>
+            
+            {% if not user.is_authenticated %}
+                <hr class="my-4">
+                <p>{% trans "Please log in to access the system." %}</p>
+                <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">
+                    <i class="bi bi-box-arrow-in-right"></i> {% trans "Login" %}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% if user.is_authenticated %}
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-person-plus text-primary"></i> 
+                    {% trans "Legal Guardians" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    {% trans "Create and manage legal guardians for patients." %}
+                </p>
+                <a href="{% url 'create_legal_guardian' %}" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> {% trans "Create Legal Guardian" %}
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-person-heart text-primary"></i> 
+                    {% trans "Patients" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    {% trans "Create and manage patient records with their information." %}
+                </p>
+                <a href="{% url 'create_patient' %}" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> {% trans "Create Patient" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-info-circle text-primary"></i> 
+                    {% trans "System Information" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>{% trans "Current User" %}</h6>
+                        <p class="text-muted">{{ user.username }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{% trans "Language" %}</h6>
+                        <p class="text-muted">
+                            {% if LANGUAGE_CODE == 'de' %}
+                                Deutsch
+                            {% else %}
+                                English
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{% trans "Last Login" %}</h6>
+                        <p class="text-muted">
+                            {% if user.last_login %}
+                                {{ user.last_login|date:"M d, Y H:i" }}
+                            {% else %}
+                                {% trans "First time login" %}
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
