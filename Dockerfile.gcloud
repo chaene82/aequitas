@@ -7,11 +7,12 @@ ENV PYTHONDONTWRITEBYTECODE=1
 
 # Install build dependencies
 RUN apk add --update --no-cache \
-    postgresql-dev \
     build-base \
-    musl-dev \
-    linux-headers \
     libffi-dev
+    linux-headers \
+    musl-dev \
+    postgresql-dev 
+
 
 # Create virtual environment and install dependencies
 COPY ./requirements.txt /requirements.txt
