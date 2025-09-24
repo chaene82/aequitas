@@ -154,3 +154,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Test documents (generated PDFs)
+app/test/documents/*.pdf

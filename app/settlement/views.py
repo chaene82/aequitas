@@ -8,33 +8,27 @@ from rest_framework import viewsets
 from fillpdf import fillpdfs
 
 class Invoice:
-    template = ''
-    document = ''
-    forms_path = '../forms/'
-    document_path = '../documents/'
-    filed = ''
-
+    """Class for handling PDF invoice generation and field management."""
+    
     def __init__(self, template, document):
         self.template = template
         self.document = document
+        self.forms_path = '../forms/'
+        self.document_path = '../documents/'
         
     def create(self, fields):
+        """Create a PDF document by filling template with provided fields."""
         template_file_path = self.forms_path + self.template
         document_file_path = self.document_path + self.document
-
-        fillpdfs.write_fillable_pdf(template_file_path , document_file_path, fields)
-
+        
+        fillpdfs.write_fillable_pdf(template_file_path, document_file_path, fields)
         return document_file_path
     
     def get_fields(self):
+        """Get available form fields from the template PDF."""
         template_file_path = self.forms_path + self.template
-        fileds = fillpdfs.get_form_fields(template_file_path)
-        return fileds
-        
-
-        
-    def hle(self, Patient, LegalGuardiant, CostApproval, PaymentMethode):
-        return None
+        fields = fillpdfs.get_form_fields(template_file_path)
+        return fields
         
     
 
