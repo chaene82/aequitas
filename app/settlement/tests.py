@@ -1,6 +1,6 @@
 from django.test import TestCase
 import os, datetime
-from settlement.models import Patient, LegalGuardiant, Address
+from settlement.models import Patient, LegalGuardian, Address
 from settlement.views import Invoice
 
 # Create your tests here.
@@ -39,17 +39,17 @@ class TestSettlement(TestCase):
         self.assertEqual(nr_address, 1)
         
         
-    def test_legal_guardiant_add(self):
-        """Test adding a customer
-        create a patient and count the number of the patient.
+    def test_legal_guardian_add(self):
+        """Test adding a legal guardian
+        create a legal guardian and count the number.
         """
         addr = Address(**test_address)
         addr.save()
         
-        a = LegalGuardiant(display_name = "Test Guardiant", address = addr)
+        a = LegalGuardian(display_name="Test Guardian", address=addr)
         a.save()
         
-        nr_lg = LegalGuardiant.objects.count()
+        nr_lg = LegalGuardian.objects.count()
         print("Number of Records (LG) = ", nr_lg)
         self.assertEqual(nr_lg, 1)
 

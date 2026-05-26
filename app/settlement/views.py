@@ -1,49 +1,34 @@
 from django.shortcuts import render
-from .models import Patient, CostApproval, Address, LegalGuardiant, Insurance, PaymentMethode,\
+from .models import Patient, CostApproval, Address, LegalGuardian, Insurance, PaymentMethod,\
     CostApprovalType, Settlement
 from .serializers import PatientSerializer, CostApprovalSerializer, AddressSerializer,\
-    LegalGuardiantSerializer, InsuranceSerializer, PaymentMethodeSerializer, CostApprovalTypeSerializer, \
+    LegalGuardianSerializer, InsuranceSerializer, PaymentMethodSerializer, CostApprovalTypeSerializer, \
         SettlementSerializer
 from rest_framework import viewsets
-
 from fillpdf import fillpdfs
 
-
-#fileds = fillpdfs.get_form_fields("../forms/Rechnung+HE+318.632.2_D+2023_r.pdf")
-#fileds['11AHVNr'] = '1234'
-
-#fillpdfs.write_fillable_pdf("../forms/Rechnung+HE+318.632.2_D+2023_r.pdf", '../documents/new.pdf', fileds)
-
-#p = Patient(display_name = "Test Patient", address = "Test Address")
-
 class Invoice:
-    template = ''
-    document = ''
-    forms_path = '../forms/'
-    document_path = '../documents/'
-    filed = ''
-
+    """Class for handling PDF invoice generation and field management."""
+    
     def __init__(self, template, document):
         self.template = template
         self.document = document
+        self.forms_path = '../forms/'
+        self.document_path = '../documents/'
         
     def create(self, fields):
+        """Create a PDF document by filling template with provided fields."""
         template_file_path = self.forms_path + self.template
         document_file_path = self.document_path + self.document
-
-        fillpdfs.write_fillable_pdf(template_file_path , document_file_path, fields)
-
+        
+        fillpdfs.write_fillable_pdf(template_file_path, document_file_path, fields)
         return document_file_path
     
     def get_fields(self):
+        """Get available form fields from the template PDF."""
         template_file_path = self.forms_path + self.template
-        fileds = fillpdfs.get_form_fields(template_file_path)
-        return fileds
-        
-
-        
-    def hle(self, Patient, LegalGuardiant, CostApproval, PaymentMethode):
-        return None
+        fields = fillpdfs.get_form_fields(template_file_path)
+        return fields
         
     
 
@@ -52,17 +37,17 @@ class CostApprovalTypeViewSet(viewsets.ModelViewSet):
     queryset = CostApprovalType.objects.all()
     serializer_class = CostApprovalTypeSerializer
 
-class PaymentMethodeViewSet(viewsets.ModelViewSet):
-    queryset = PaymentMethode.objects.all()
-    serializer_class = PaymentMethodeSerializer
+class PaymentMethodViewSet(viewsets.ModelViewSet):
+    queryset = PaymentMethod.objects.all()
+    serializer_class = PaymentMethodSerializer
 
 class PatientViewSet(viewsets.ModelViewSet):
     queryset = Patient.objects.all()
     serializer_class = PatientSerializer
     
-class LegalGuardiantViewSet(viewsets.ModelViewSet):
-    queryset = LegalGuardiant.objects.all()
-    serializer_class = LegalGuardiantSerializer
+class LegalGuardianViewSet(viewsets.ModelViewSet):
+    queryset = LegalGuardian.objects.all()
+    serializer_class = LegalGuardianSerializer
 
 class CostApprovalViewSet(viewsets.ModelViewSet):
     queryset = CostApproval.objects.all()
@@ -76,6 +61,6 @@ class InsuranceViewSet(viewsets.ModelViewSet):
     queryset = Insurance.objects.all()
     serializer_class = InsuranceSerializer
     
-class SettelmentViewSet(viewsets.ModelViewSet):
+class SettlementViewSet(viewsets.ModelViewSet):
     queryset = Settlement.objects.all()
     serializer_class = SettlementSerializer
